@@ -1,0 +1,41 @@
+#include "../../inc/so_long.h"
+
+int map_comp(char c)
+{
+    return (c == '1' || c == '0' || c == 'C' || c == 'E' || c == 'P');
+}
+
+int line_comp(char *av)
+{
+    int i;
+
+    i = 0;
+    while (av[i])
+    {
+        if (!map_comp(av[i]))
+            return (0);
+        i++;
+    }
+    return (1);
+}
+
+int validate_content(t_list *list)
+{
+    t_node  *tmp;
+
+    tmp = list->head;
+    while (tmp)
+    {
+        if (!line_comp(tmp->content))
+            return (0);
+        tmp = tmp->next;
+    }
+    return (1);
+}
+
+int validate_map(t_list *list)
+{
+    if (!validate_borders(list) || !validate_content(list))
+        return (0);
+    return (1);
+}

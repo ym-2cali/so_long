@@ -1,5 +1,19 @@
 #include "../inc/so_long.h"
 
+void	ft_bzero(void *s, int n)
+{
+	unsigned char	*c;
+	int				i;
+
+	c = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		c[i] = 0;
+		i++;
+	}
+}
+
 int ft_strlen(const char *s)
 {
 	int i;

@@ -36,7 +36,7 @@ void    read_map(char *av, t_list *list)
     close(fd);
 }
 
-void    parse(char *av, int ac, t_list *list)
+void    parse(char *av, t_list *list)
 {
     read_map(av, list);
     if (!validate_map_content(list))

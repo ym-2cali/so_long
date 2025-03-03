@@ -2,7 +2,7 @@
 
 int map_comp(char c)
 {
-    return (c == '1' || c == '0' || c == 'C' || c == 'E' || c == 'P');
+    return (c == '1' || c == '0' || c == 'C' || c == 'E' || c == 'P' || c == '\n');
 }
 
 int line_comp(char *av)
@@ -43,7 +43,7 @@ int validate_map_content(t_list *list)
 
 int validate_map(t_list *list)
 {
-    if (!validate_map_content || !check_form(list))
+    if (!validate_map_content(list) || !check_form(list))
         return (0);
     return (1);
 }

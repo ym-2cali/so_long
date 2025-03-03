@@ -56,7 +56,7 @@ char	*buffer_left(char *str)
 	if (str[i] == '\n')
 	{
 		i++;
-		buffer = malloc(ft_strlen(str) - i + 1);
+		buffer = malloc(ft_strlenn(str) - i + 1);
 		if (!buffer)
 			return (free(str), str = NULL, NULL);
 		j = 0;
@@ -74,7 +74,7 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	line = NULL;
-	if ((fd < 0 || fd >= OPEN_MAX) || BUFFER_SIZE <= 0)
+	if ((fd < 0 || fd >= 1024) || BUFFER_SIZE <= 0)
 	{
 		if (str)
 			free(str);

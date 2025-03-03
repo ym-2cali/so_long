@@ -39,5 +39,7 @@ int     validate_map(t_list *list);
 void    clear_map(t_list *list);
 void    simple_error(t_list *list);
 void    invalid_map(t_list *map);
+void	ft_bzero(void *s, int n);
+void    parse(char *av, t_list *list);
 
 #endif

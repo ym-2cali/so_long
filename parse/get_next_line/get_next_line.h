@@ -27,7 +27,7 @@ char	*ft_strchr(char *str, int c);
 char	*ft_strdup(char *str);
 char	*buffer_to_line(char *line, int fd);
 char	*get_lines(char *str);
-size_t	ft_strlen(char *str);
+size_t	ft_strlenn(char *str);
 char	*buffer_left(char *str);
 
 #endif

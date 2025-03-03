@@ -4,6 +4,8 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
+# include <errno.h>
 # include "../parse/get_next_line/get_next_line.h"
 
 typedef struct s_node {
@@ -28,6 +30,14 @@ int     up_down(t_list *list);
 int     map_comp(char c);
 int     line_comp(char *av);
 int     validate_content(t_list *list);
+int     validate_map_content(t_list *list);
+void    read_map(char *av, t_list *list);
+int     count_elements(t_list *map, char c);
+int	    validate_elements(t_list *list);
+int	    check_form(t_list *map);
 int     validate_map(t_list *list);
+void    clear_map(t_list *list);
+void    simple_error(t_list *list);
+void    invalid_map(t_list *map);
 
 #endif

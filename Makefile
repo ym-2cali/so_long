@@ -1,4 +1,5 @@
 CFILES = main.c parse/MAP/validate_extension.c parse/parse_libft.c pare/parse.c parse/MAP/validate_borders.c\
+parse/MAP/validate_map_elements.c\
 
 OBJ = $(CFILES:.c=.o)
 

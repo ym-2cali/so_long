@@ -33,9 +33,17 @@ int validate_content(t_list *list)
     return (1);
 }
 
+int validate_map_content(t_list *list)
+{
+    if (!validate_borders(list) || !validate_content(list) 
+        || !validate_elements(list))
+        return (0);
+    return (1);
+}
+
 int validate_map(t_list *list)
 {
-    if (!validate_borders(list) || !validate_content(list))
+    if (!validate_map_content || !check_form(list))
         return (0);
     return (1);
 }

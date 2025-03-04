@@ -16,6 +16,7 @@ void    read_map(char *av, t_list *list)
 {
     int     fd;
     char    *str;
+	int		i;
 
     if (!av)
         simple_error(list);
@@ -25,20 +26,42 @@ void    read_map(char *av, t_list *list)
     if (fd < 0)
         perror("Can't open file");
     str = "";
-    while (str)
+	i = 0;
+    while (i == 0 || str != NULL)
     {
+		i = 1;
         str = get_next_line(fd);
         if (!str)
-            simple_error(list);
+		{
+			break ;
+            // simple_error(list);
+			// return ;
+		}
         fill_list(list, create_node(str));
-        free(str);
     }
+    free(str);
     close(fd);
 }
 
 void    parse(char *av, t_list *list)
 {
     read_map(av, list);
-    if (!validate_map_content(list))
-        invalid_map(list);
+    print_list(list);
+    if (!validate_map(list))
+	{
+		invalid_map(list);
+	}
+	printf("all good\n");
+}
+
+void    print_list(t_list *lst)
+{
+    t_node *tmp;
+
+    tmp = lst->head;
+    while (tmp)
+    {
+        printf("content = %s\n", tmp->content);
+        tmp = tmp->next;
+    }
 }

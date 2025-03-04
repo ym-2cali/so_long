@@ -5,7 +5,7 @@ int up_down(t_list *list)
     int i;
 
     i = 0;
-    while (list->head->content[i])
+    while (list->head->content[i + 1])
     {
         if (list->head->content[i] != '1' || list->tail->content[i] != '1')
             return (0);
@@ -18,7 +18,7 @@ int validate_sides(char *av)
 {
     int len;
 
-    len = ft_strlen(av) - 1;
+    len = ft_strlen(av) - 2;
     if (av[0] == '1' && av[len] == '1')
         return (1);
     return (0);

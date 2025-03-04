@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:36:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2024/12/02 17:05:04 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/02/24 20:19:56 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlenn(char *str)
 	return (i);
 }
 
-char	*ft_strdup(char *str)
+char	*ft_strdupp(char *str)
 {
 	char	*buffer;
 	size_t	i;
@@ -112,5 +112,7 @@ char	*get_lines(char *str)
 		i++;
 	}
 	line[i] = '\0';
+	// if (str)
+	// 	free(str);
 	return (line);
 }

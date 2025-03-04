@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:33:00 by yael-maa          #+#    #+#             */
-/*   Updated: 2024/12/02 17:10:41 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/02/25 17:21:13 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*buffer_to_line(char *line, int fd)
 	int		read_byte;
 
 	if (!line)
-		line = ft_strdup("");
+		line = ft_strdupp("");
 	buffer = malloc((size_t)BUFFER_SIZE + 1);
 	if (!buffer)
 		return (free(line), line = NULL, NULL);
@@ -70,10 +70,11 @@ char	*buffer_left(char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*str;
+	char		*str;
 	char		*line;
 
 	line = NULL;
+	str = NULL;
 	if ((fd < 0 || fd >= 1024) || BUFFER_SIZE <= 0)
 	{
 		if (str)
@@ -87,5 +88,6 @@ char	*get_next_line(int fd)
 	if (!line)
 		return (NULL);
 	str = buffer_left(str);
+	free(str);
 	return (line);
 }

@@ -8,7 +8,7 @@ int	main(int ac, char **av)
         return (0);
     ft_bzero(&list, sizeof(t_list));
     parse(av[1], &list);
-    if (list.size)
-        clear_map(&list);
+    // if (list.size)
+    clear_map(&list);
     return (0);
 }

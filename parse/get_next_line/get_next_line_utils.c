@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
 
 size_t	ft_strlenn(char *str)
 {
@@ -103,6 +104,7 @@ char	*get_lines(char *str)
 		line = malloc(i + 1);
 	if (!line)
 		return (free(str), str = NULL, NULL);
+		// while (1);
 	i = -1;
 	while (str[++i] && str[i] != '\n')
 		line[i] = str[i];
@@ -111,7 +113,9 @@ char	*get_lines(char *str)
 		line[i] = str[i];
 		i++;
 	}
+	printf(" ===> %p\n", str);
 	line[i] = '\0';
+	// while (1);
 	// if (str)
 	// 	free(str);
 	return (line);

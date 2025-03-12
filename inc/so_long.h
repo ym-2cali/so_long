@@ -19,6 +19,28 @@ typedef struct s_list {
     int     size;
 } t_list ;
 
+typedef struct s_pos {
+    int x;
+    int y;
+} t_pos;
+
+typedef struct s_data {
+    char **map;
+    void *mlx;
+    void *win;
+    void *player_img;
+    void *wall_img;
+    void *empty_img;
+    void *col_img;
+    void *exit_img;
+    t_pos pos;
+    int col_count;
+    int max_col;
+    int moves;
+    int height;
+    int width;
+} t_data;
+
 int     ft_strlen(const char *s);
 int	    ft_strncmp(const char *s1, const char *s2, int n);
 int     validate_extension(char *av);
@@ -42,5 +64,6 @@ void    invalid_map(t_list *map);
 void	ft_bzero(void *s, int n);
 void    parse(char *av, t_list *list);
 void    print_list(t_list *lst);
+char	**lst_to_arr(t_list *list);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:33:00 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/02/25 17:21:13 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/11 23:44:55 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	*get_next_line(int fd)
 
 	line = NULL;
 	str = NULL;
-	if ((fd < 0 || fd >= 1024) || BUFFER_SIZE <= 0)
+	if ((fd < 0 || fd >= OPEN_MAX) || BUFFER_SIZE <= 0)
 	{
 		if (str)
 			free(str);

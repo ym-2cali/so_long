@@ -13,10 +13,10 @@ NAME = so_long
 all:$(NAME)
 
 $(NAME):$(OBJ)
-	$(CC) $(CFLAGS) $(OBJ)  -o $(NAME)
+	$(CC) $(CFLAGS) -Lmlx -lmlx -framework OpenGL -framework AppKit $(OBJ)  -o $(NAME)
 
 %.o: %.c inc/so_long.h parse/get_next_line/get_next_line.h
-	$(CC) $(CFLAGS)  -c $< -o $@
+	$(CC) $(CFLAGS) -Imlx  -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

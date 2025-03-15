@@ -1,12 +1,13 @@
 CFILES = main.c parse/MAP/validate_extension.c parse/parse_libft.c parse/parse.c parse/MAP/validate_borders.c\
 parse/MAP/validate_map_elements.c parse/MAP/validate_map.c parse/MAP/map_errors.c parse/get_next_line/get_next_line_utils.c\
-parse/get_next_line/get_next_line.c \
+parse/get_next_line/get_next_line.c window.c window_utils.c \
 
 OBJ = $(CFILES:.c=.o)
 
 CC = cc
 
 CFLAGS = -g -Wall -Wextra -Werror #-fsanitize=address
+#-Werror
 
 NAME = so_long
 

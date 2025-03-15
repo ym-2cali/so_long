@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:26:44 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/15 01:26:45 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/15 02:10:18 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int	main(int ac, char **av)
 	map.win = mlx_new_window(map.mlx, map.width * 100, map.height * 100, "so_long");
 	get_img(&map);
 	draw_img(&map);
+	mlx_key_hook(map.win, h_events, &map);
     if (list.size)
         clear_map(&list);
 	mlx_loop(&map.mlx);

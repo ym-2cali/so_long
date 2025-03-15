@@ -19,6 +19,11 @@ typedef struct s_list {
     int     size;
 } t_list ;
 
+typedef struct s_pos {
+    int x;
+    int y;    
+} t_pos ;
+
 typedef struct s_map {
     char    **arr;
     void    *mlx;
@@ -30,6 +35,7 @@ typedef struct s_map {
     void    *col_img;
     int     height;
     int     width;
+    t_pos   player_pos;
 } t_map;
 
 int     ft_strlen(const char *s);
@@ -59,5 +65,6 @@ char	**lst_to_arr(t_list *list);
 void	get_img(t_map *map);
 void	draw_img(t_map *map);
 int     get_height(t_map *map);
+int     h_events(int keycode, t_map *map);
 
 #endif

@@ -8,6 +8,7 @@
 # include <errno.h>
 # include "../parse/get_next_line/get_next_line.h"
 # include "mlx.h"
+
 typedef struct s_node {
     char          *content;
     struct s_node *next;
@@ -35,6 +36,8 @@ typedef struct s_map {
     void    *col_img;
     int     height;
     int     width;
+    int     col;
+    int     gain;
     t_pos   player_pos;
 } t_map;
 
@@ -55,7 +58,7 @@ int     count_elements(t_list *map, char c);
 int	    validate_elements(t_list *list);
 int	    check_form(t_list *map);
 int     validate_map(t_list *list);
-void    clear_map(t_list *list);
+void    clear_list(t_list *list);
 void    simple_error(t_list *list);
 void    invalid_map(t_list *map);
 void	ft_bzero(void *s, int n);
@@ -66,5 +69,11 @@ void	get_img(t_map *map);
 void	draw_img(t_map *map);
 int     get_height(t_map *map);
 int     h_events(int keycode, t_map *map);
+char	**ft_freearr(char **arr);
+void    get_window(t_map *map, t_list *list);
+void	move_up(t_map *map);
+void	move_left(t_map *map);
+void	move_down(t_map *map);
+void	move_right(t_map *map);
 
 #endif

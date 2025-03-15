@@ -1,6 +1,6 @@
 #include "../inc/so_long.h"
 
-void    clear_map(t_list *list)
+void    clear_list(t_list *list)
 {
     t_node  *tmp;
 

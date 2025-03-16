@@ -25,7 +25,10 @@ void    read_map(char *av, t_list *list)
         invalid_map(list);
     fd = open(av, O_RDONLY, 0777);
     if (fd < 0)
+    {
         perror("Can't open file");
+        exit(0);
+    }
     str = NULL;
 	i = 0;
     while (i == 0 || str != NULL)
@@ -33,10 +36,7 @@ void    read_map(char *av, t_list *list)
         i = 1;
         str = get_next_line(fd);
         if (!str)
-		{
-            close(fd);
-			exit(0);
-		}
+			break ;
         fill_list(list, create_node(str));
     }
     close(fd);
@@ -46,9 +46,7 @@ void    parse(char *av, t_list *list)
 {
     read_map(av, list);
     if (!validate_map(list))
-	{
 		invalid_map(list);
-	}
 	printf("all good\n");
 }
 

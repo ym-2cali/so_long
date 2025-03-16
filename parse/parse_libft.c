@@ -52,7 +52,7 @@ t_node	*create_node(char *content)
 
 void	fill_list(t_list *list, t_node *node)
 {
-	if (!list || !node)
+	if (!list || !node || !node->content)
 		return ;
 	if (list->size == 0)
 	{

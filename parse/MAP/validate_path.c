@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 03:44:41 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/16 22:04:15 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/16 23:08:42 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void    get_positions(t_list *list, t_pos *pos, t_pos *size, char c)
 
 void    fill(char **map, t_pos size, t_pos current)
 {
+    if (map[current.y][current.x] == 'E')
+        map[current.y][current.x] = 'X';
     if ((current.y < 0) || (current.x < 0) || (current.y > size.y) || (current.x > size.x)
         || map[current.y][current.x] == '1' || map[current.y][current.x] == 'X')
         return ;

@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:26:44 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/16 02:40:10 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/16 22:00:36 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ char	**lst_to_arr(t_list *list)
 	arr[i] = NULL;
 	return (arr);
 }
+
 void leaks_handler()
 {
 	system("lsof -h -p  so_long");

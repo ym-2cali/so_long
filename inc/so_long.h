@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/16 04:46:56 by yael-maa          #+#    #+#             */
+/*   Updated: 2025/03/16 21:47:22 by yael-maa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -79,5 +91,9 @@ int	    validate_size(t_list *list);
 int	    close_window(t_map *map);
 void    put_str(char *s, int fd);
 void    invalid_img_file(t_map *map, void *param, char *s);
+void    get_positions(t_list *list, t_pos *pos, t_pos *size, char c);
+void    fill(char **map, t_pos size, t_pos current);
+void    flood_fill(char **map, t_pos size, t_pos begin);
+int     validate_path(t_list *list);
 
 #endif

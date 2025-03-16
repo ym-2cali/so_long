@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:09:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/16 02:40:03 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/16 21:11:45 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	draw_img(t_map *map)
 	i = -1;
 	while (map->arr[++i])
 	{
-		j = -1;
+		j = -1; 
 		while (map->arr[i][++j])
 		{
 			if (map->arr[i][j] == '1')

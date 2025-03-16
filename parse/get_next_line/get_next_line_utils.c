@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:36:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/02/24 20:19:56 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/16 22:06:55 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ char	*get_lines(char *str)
 		line[i] = str[i];
 		i++;
 	}
-	printf(" ===> %p\n", str);
+	// printf(" ===> %p\n", str);
 	line[i] = '\0';
 	// while (1);
 	// if (str)

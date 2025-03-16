@@ -54,8 +54,8 @@ int	validate_size(t_list *list)
 
 	width = (ft_strlen(list->head->content) - 1) * 100;
 	height = (list->size - 1) * 100;
-	printf("width = %d\n", width);
-	printf("height = %d\n", height);
+	// printf("width = %d\n", width);
+	// printf("height = %d\n", height);
 	if (width > 2560 || height > 1440)
 		return (0);
 	return (1);

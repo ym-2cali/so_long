@@ -75,5 +75,9 @@ void	move_up(t_map *map);
 void	move_left(t_map *map);
 void	move_down(t_map *map);
 void	move_right(t_map *map);
+int	    validate_size(t_list *list);
+int	    close_window(t_map *map);
+void    put_str(char *s, int fd);
+void    invalid_img_file(t_map *map, void *param, char *s);
 
 #endif

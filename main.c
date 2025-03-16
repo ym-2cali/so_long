@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:26:44 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/15 04:49:09 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/16 02:40:10 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,16 @@ char	**lst_to_arr(t_list *list)
 	arr[i] = NULL;
 	return (arr);
 }
-
+void leaks_handler()
+{
+	system("lsof -h -p  so_long");
+}
 int	main(int ac, char **av)
 {
 	t_map	map;
     t_list  list;
 
-	// atexit(ft);
+	// atexit(leaks_handler);
     if (ac != 2)
         return (0);
     ft_bzero(&list, sizeof(t_list));
@@ -70,6 +73,7 @@ int	main(int ac, char **av)
 	get_img(&map);
 	draw_img(&map);
 	mlx_key_hook(map.win, h_events, &map);
+	mlx_hook(map.win, 17, 0, close_window, &map);
 	mlx_loop(&map.mlx);
 	ft_freearr(map.arr);
     return (0);

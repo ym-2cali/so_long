@@ -31,15 +31,11 @@ void    read_map(char *av, t_list *list)
     while (i == 0 || str != NULL)
     {
         i = 1;
-        // if (str)
-        //     free (str);
-		i = 1;
         str = get_next_line(fd);
         if (!str)
 		{
-            // simple_error(list);
-			break ;
-			// return ;
+            close(fd);
+			exit(0);
 		}
         fill_list(list, create_node(str));
     }
@@ -49,7 +45,6 @@ void    read_map(char *av, t_list *list)
 void    parse(char *av, t_list *list)
 {
     read_map(av, list);
-    // print_list(list);
     if (!validate_map(list))
 	{
 		invalid_map(list);

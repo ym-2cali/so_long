@@ -43,7 +43,10 @@ int validate_map_content(t_list *list)
 
 int validate_map(t_list *list)
 {
-    if (!validate_map_content(list) || !check_form(list))
+    if (!validate_map_content(list) || !check_form(list) || !validate_size(list))
+    {
+        printf("%d\n", validate_size(list));
         return (0);
+    }   
     return (1);
 }

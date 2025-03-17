@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:26:44 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/16 22:00:36 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/17 01:05:23 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,16 @@ char	**lst_to_arr(t_list *list)
 	return (arr);
 }
 
-void leaks_handler()
-{
-	system("lsof -h -p  so_long");
-}
+// void leaks_handler()
+// {
+// 	system("lsof -h -p  so_long");
+// }
 int	main(int ac, char **av)
 {
 	t_map	map;
     t_list  list;
 
-	// atexit(leaks_handler);
+	atexit(ft);
     if (ac != 2)
         return (0);
     ft_bzero(&list, sizeof(t_list));

@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 04:46:56 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/16 21:47:22 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/17 01:04:44 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <errno.h>
 # include "../parse/get_next_line/get_next_line.h"
 # include "mlx.h"
+// # define malloc(X)  NULL
 
 typedef struct s_node {
     char          *content;

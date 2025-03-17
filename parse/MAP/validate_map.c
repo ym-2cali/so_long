@@ -43,6 +43,11 @@ int validate_map_content(t_list *list)
 
 int validate_map(t_list *list)
 {
+    if (!list || !list->head)
+    {
+        write(2, "Memory Problem\n", 16);
+        exit(0);
+    }
     if (!validate_map_content(list) || !check_form(list) || !validate_size(list))
     {
         // printf("%d\n", validate_size(list));

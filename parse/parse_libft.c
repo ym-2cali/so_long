@@ -44,7 +44,7 @@ t_node	*create_node(char *content)
 		return (NULL);
 	node = malloc(sizeof(t_node));
 	if (!node)
-		return (NULL);
+		return (write(2, "Memory Problem\n", 16), NULL);
 	node->content = content;
 	node->next = NULL;
 	return (node);

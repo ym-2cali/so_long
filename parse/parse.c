@@ -33,10 +33,11 @@ void    read_map(char *av, t_list *list)
 	i = 0;
     while (i == 0 || str != NULL)
     {
-        i = 1;
         str = get_next_line(fd);
-        if (!str)
-			break ;
+
+        if (!str || (i == 0 && str[0] == '\n')) // ft_strncmp("\n", str, 1) == 0 
+			return close(fd),free(str);
+        i = 1;
         fill_list(list, create_node(str));
     }
     close(fd);

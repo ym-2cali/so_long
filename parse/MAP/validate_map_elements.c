@@ -1,18 +1,30 @@
 #include "../../inc/so_long.h"
 
+int	ft_berlin(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] && s[i] != '\n')
+		i++;
+	return (i);
+}
 int	check_form(t_list *map)
 {
 	int		len;
 	t_node	*tmp;
 
-	len = ft_strlen(map->head->content);
+	len = ft_berlin(map->head->content);
 	tmp = map->head->next;
 	while(tmp)
 	{
-		if (len != ft_strlen(tmp->content))
+		if (len != ft_berlin(tmp->content))
+			return (0);
+		else if ((tmp->content[ft_berlin(tmp->content)] == '\n') && tmp->next == NULL)
 			return (0);
 		tmp = tmp->next;
 	}
+
 	return (1);
 }
 

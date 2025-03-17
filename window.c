@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:09:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/16 21:11:45 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/17 05:40:22 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	draw_img(t_map *map)
 int	h_events(int keycode, t_map *map)
 {
 	if (keycode == 53)
-		exit(0);
+		close_window(map);
 	else if (keycode == 13)
 		move_up(map);
 	else if (keycode == 0)

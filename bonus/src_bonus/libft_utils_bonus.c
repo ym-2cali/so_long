@@ -1,22 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   libft_utils_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/16 02:25:33 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 06:18:45 by yael-maa         ###   ########.fr       */
+/*   Created: 2025/03/15 03:30:11 by yael-maa          #+#    #+#             */
+/*   Updated: 2025/03/18 06:20:47 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "../inc_bonus/so_long_bonus.h"
 
-void	invalid_img_file(t_map *map, void *param, char *s)
+char	**ft_freearr(char **arr)
 {
-	if (!param)
+	size_t	i;
+
+	i = 0;
+	if (arr)
 	{
-		put_str(s, 2);
-		close_window(map);
+		while (arr[i])
+		{
+			free(arr[i]);
+			i++;
+		}
+		free(arr);
+	}
+	return (NULL);
+}
+
+void	put_str(char *s, int fd)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
 	}
 }

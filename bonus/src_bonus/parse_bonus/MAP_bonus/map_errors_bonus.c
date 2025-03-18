@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   map_errors_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/16 02:25:33 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 06:18:45 by yael-maa         ###   ########.fr       */
+/*   Created: 2025/03/18 02:14:19 by yael-maa          #+#    #+#             */
+/*   Updated: 2025/03/18 05:28:11 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "../../../inc_bonus/so_long_bonus.h"
 
-void	invalid_img_file(t_map *map, void *param, char *s)
+void	invalid_map(t_list *map)
 {
-	if (!param)
-	{
-		put_str(s, 2);
-		close_window(map);
-	}
+	write(2, "Invalid Map\n", 12);
+	clear_list(map);
+	exit(1);
+}
+
+void	error_file(t_list *list)
+{
+	perror("Can't open file");
+	if (list->size)
+		clear_list(list);
+	exit(1);
+}
+
+void	simple_error(t_list *list)
+{
+	write(2, "Error\n", 7);
+	if (list->size)
+		clear_list(list);
+	exit(1);
 }

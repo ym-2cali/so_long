@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_libft.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/18 02:10:09 by yael-maa          #+#    #+#             */
+/*   Updated: 2025/03/18 02:10:50 by yael-maa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/so_long.h"
 
 void	ft_bzero(void *s, int n)
@@ -14,9 +26,9 @@ void	ft_bzero(void *s, int n)
 	}
 }
 
-int ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
@@ -44,7 +56,7 @@ t_node	*create_node(char *content)
 		return (NULL);
 	node = malloc(sizeof(t_node));
 	if (!node)
-		return (write(2, "Memory Problem\n", 16), NULL);
+		return (NULL);
 	node->content = content;
 	node->next = NULL;
 	return (node);

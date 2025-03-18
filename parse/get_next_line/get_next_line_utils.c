@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:36:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/17 03:39:35 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/17 23:59:00 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strdupp(char *str)
 	size = ft_strlenn(str) + 1;
 	buffer = malloc(size);
 	if (!buffer)
-		return (write(2, "Memory Problem\n", 16), NULL);
+		return (NULL);
 	i = -1;
 	while (str[++i])
 		buffer[i] = str[i];
@@ -76,7 +76,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	size = ft_strlenn(s1) + ft_strlenn(s2) + 1;
 	s3 = malloc(size);
 	if (!s3)
-		return (write(2, "Memory Problem\n", 16), free(s1), s1 = NULL, NULL);
+		return (free(s1), s1 = NULL, NULL);
 	i = -1;
 	while (s1[++i])
 		s3[i] = s1[i];
@@ -103,8 +103,7 @@ char	*get_lines(char *str)
 	else
 		line = malloc(i + 1);
 	if (!line)
-		return (write(2, "Memory Problem\n", 16), free(str), str = NULL, NULL);
-		// while (1);
+		return (free(str), str = NULL, NULL);
 	i = -1;
 	while (str[++i] && str[i] != '\n')
 		line[i] = str[i];
@@ -113,10 +112,6 @@ char	*get_lines(char *str)
 		line[i] = str[i];
 		i++;
 	}
-	// printf(" ===> %p\n", str);
 	line[i] = '\0';
-	// while (1);
-	// if (str)
-	// 	free(str);
 	return (line);
 }

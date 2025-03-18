@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validate_map_elements.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/18 02:22:54 by yael-maa          #+#    #+#             */
+/*   Updated: 2025/03/18 02:24:41 by yael-maa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/so_long.h"
 
 int	ft_berlin(char *s)
@@ -9,6 +21,7 @@ int	ft_berlin(char *s)
 		i++;
 	return (i);
 }
+
 int	check_form(t_list *map)
 {
 	int		len;
@@ -16,19 +29,19 @@ int	check_form(t_list *map)
 
 	len = ft_berlin(map->head->content);
 	tmp = map->head->next;
-	while(tmp)
+	while (tmp)
 	{
 		if (len != ft_berlin(tmp->content))
 			return (0);
-		else if ((tmp->content[ft_berlin(tmp->content)] == '\n') && tmp->next == NULL)
+		else if ((tmp->content[ft_berlin(tmp->content)] == '\n')
+			&& tmp->next == NULL)
 			return (0);
 		tmp = tmp->next;
 	}
-
 	return (1);
 }
 
-int count_elements(t_list *map, char c)
+int	count_elements(t_list *map, char c)
 {
 	t_node	*tmp;
 	int		i;
@@ -41,7 +54,7 @@ int count_elements(t_list *map, char c)
 		i = 0;
 		while (tmp->content[i])
 		{
-			if (tmp->content[i] == c)	
+			if (tmp->content[i] == c)
 				count++;
 			i++;
 		}
@@ -66,8 +79,6 @@ int	validate_size(t_list *list)
 
 	width = (ft_strlen(list->head->content) - 1) * 100;
 	height = (list->size - 1) * 100;
-	// printf("width = %d\n", width);
-	// printf("height = %d\n", height);
 	if (width > 2560 || height > 1440)
 		return (0);
 	return (1);

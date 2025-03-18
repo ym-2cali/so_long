@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:33:00 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/17 03:39:48 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/17 23:41:46 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*buffer_to_line(char *line, int fd)
 		line = ft_strdupp("");
 	buffer = malloc((size_t)BUFFER_SIZE + 1);
 	if (!buffer)
-		return (write(2, "Memory Problem\n", 16), free(line), line = NULL, NULL);
+		return (free(line), line = NULL, NULL);
 	read_byte = 1;
 	while (read_byte > 0)
 	{
@@ -58,7 +58,7 @@ char	*buffer_left(char *str)
 		i++;
 		buffer = malloc(ft_strlenn(str) - i + 1);
 		if (!buffer)
-			return (write(2, "Memory Problem\n", 16), free(str), str = NULL, NULL);
+			return (free(str), str = NULL, NULL);
 		j = 0;
 		while (str[i])
 			buffer[j++] = str[i++];

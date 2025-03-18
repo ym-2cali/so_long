@@ -6,11 +6,11 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 02:17:10 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 02:17:11 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/18 02:52:23 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long.h"
+#include "../../../inc/so_long.h"
 
 int	up_down(t_list *list)
 {

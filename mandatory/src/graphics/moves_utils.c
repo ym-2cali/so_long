@@ -6,11 +6,11 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 01:20:37 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 01:34:39 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/18 02:57:12 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/so_long.h"
+#include "../../inc/so_long.h"
 
 void	put_player_img_up(t_map *map)
 {

@@ -6,11 +6,11 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 02:22:54 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 02:24:41 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/18 02:52:42 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long.h"
+#include "../../../inc/so_long.h"
 
 int	ft_berlin(char *s)
 {

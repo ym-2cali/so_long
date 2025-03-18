@@ -6,11 +6,11 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 03:44:41 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 02:30:06 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/18 02:57:34 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long.h"
+#include "../../../inc/so_long.h"
 
 void	get_positions(t_list *list, t_pos *pos, t_pos *size, char c)
 {

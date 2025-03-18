@@ -6,11 +6,11 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 02:05:11 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 02:09:15 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/18 02:52:04 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "../../inc/so_long.h"
 
 void	clear_list(t_list *list)
 {

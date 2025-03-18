@@ -6,11 +6,11 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:26:44 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 00:35:14 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/18 02:51:11 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/so_long.h"
+#include "../inc/so_long.h"
 
 void	lst_to_arr_helper(t_list *list, char **arr, t_node *tmp)
 {

@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_extension.c                               :+:      :+:    :+:   */
+/*   map_errors.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/18 02:17:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 02:18:14 by yael-maa         ###   ########.fr       */
+/*   Created: 2025/03/18 02:14:19 by yael-maa          #+#    #+#             */
+/*   Updated: 2025/03/18 02:53:00 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long.h"
+#include "../../../inc/so_long.h"
 
-int	validate_extension(char *av)
+void	invalid_map(t_list *map)
 {
-	int	len;
+	write(2, "Invalid Map\n", 12);
+	clear_list(map);
+	exit(1);
+}
 
-	len = ft_strlen(av) - 4;
-	if (len > 0 && av[len] == '.' && av[len + 1] == 'b'
-		&& av[len + 2] == 'e' && av[len + 3] == 'r')
-		return (1);
-	return (0);
+void	error_file(t_list *list)
+{
+	perror("Can't open file");
+	if (list->size)
+		clear_list(list);
+	exit(1);
+}
+
+void	simple_error(t_list *list)
+{
+	write(2, "Error\n", 7);
+	if (list->size)
+		clear_list(list);
+	exit(1);
 }

@@ -6,11 +6,11 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 02:10:09 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 02:10:50 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/18 02:51:42 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "../../inc/so_long.h"
 
 void	ft_bzero(void *s, int n)
 {

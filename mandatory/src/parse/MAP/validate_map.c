@@ -6,11 +6,11 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 02:18:38 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 02:22:35 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/18 02:52:52 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long.h"
+#include "../../../inc/so_long.h"
 
 int	map_comp(char c)
 {

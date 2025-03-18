@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 04:46:56 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 02:04:07 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/18 02:50:55 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include "../parse/get_next_line/get_next_line.h"
+# include "../src/parse/get_next_line/get_next_line.h"
 # include "mlx.h"
 
 typedef struct s_node

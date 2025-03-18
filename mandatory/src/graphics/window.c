@@ -6,11 +6,11 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:09:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 01:48:32 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/18 04:01:31 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/so_long.h"
+#include "../../inc/so_long.h"
 
 int	close_window(t_map *map)
 {
@@ -25,17 +25,22 @@ void	get_img(t_map *map)
 	int	w;
 	int	h;
 
-	map->exit_img = mlx_xpm_file_to_image(map->mlx, "exit.xpm", &w, &h);
+	map->exit_img = mlx_xpm_file_to_image(map->mlx,
+			"/mnt/homes/yael-maa/so_long/img_xpm/exit.xpm", &w, &h);
 	invalid_img_file(map, map->exit_img, "Invalid exit_img file or content\n");
-	map->floor_img = mlx_xpm_file_to_image(map->mlx, "floor.xpm", &w, &h);
+	map->floor_img = mlx_xpm_file_to_image(map->mlx,
+			"/mnt/homes/yael-maa/so_long/img_xpm/floor.xpm", &w, &h);
 	invalid_img_file(map, map->floor_img,
 		"Invalid floor_img file or content\n");
-	map->wall_img = mlx_xpm_file_to_image(map->mlx, "wall.xpm", &w, &h);
+	map->wall_img = mlx_xpm_file_to_image(map->mlx,
+			"/mnt/homes/yael-maa/so_long/img_xpm/wall.xpm", &w, &h);
 	invalid_img_file(map, map->wall_img, "Invalid wall_img file or content\n");
-	map->player_img = mlx_xpm_file_to_image(map->mlx, "player.xpm", &w, &h);
+	map->player_img = mlx_xpm_file_to_image(map->mlx,
+			"/mnt/homes/yael-maa/so_long/img_xpm/player.xpm", &w, &h);
 	invalid_img_file(map, map->player_img,
 		"Invalid player_img file or content\n");
-	map->col_img = mlx_xpm_file_to_image(map->mlx, "coin.xpm", &w, &h);
+	map->col_img = mlx_xpm_file_to_image(map->mlx,
+			"/mnt/homes/yael-maa/so_long/img_xpm/coin.xpm", &w, &h);
 	invalid_img_file(map, map->col_img, "Invalid col_img file or content\n");
 }
 

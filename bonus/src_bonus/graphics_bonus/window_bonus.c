@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:09:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/19 05:29:22 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/19 05:48:59 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	get_img(t_map *map)
 	invalid_img_file(map, map->player_left_img,
 		"Invalid player_left_img file or content\n");
 	map->player_img = mlx_xpm_file_to_image(map->mlx,
-			"/mnt/homes/yael-maa/so_long/img_xpm/player_up.xpm", &w, &h);
+			"//mnt/homes/yael-maa/so_long/img_xpm/player_up.xpm", &w, &h);
 	invalid_img_file(map, map->player_img,
 		"Invalid player_img file or content\n");
 	map->player_down_img = mlx_xpm_file_to_image(map->mlx,
@@ -68,6 +68,8 @@ void	put_img(t_map *map, int i, int j)
 	{
 		map->player_pos.x = j;
 		map->player_pos.y = i;
+		mlx_put_image_to_window(map->mlx, map->win,
+			map->floor_img, j * 100, i * 100);
 		mlx_put_image_to_window(map->mlx, map->win,
 			map->player_img, j * 100, i * 100);
 	}

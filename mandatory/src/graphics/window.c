@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:09:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 04:01:31 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/19 03:00:16 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	get_img(t_map *map)
 			"/mnt/homes/yael-maa/so_long/img_xpm/wall.xpm", &w, &h);
 	invalid_img_file(map, map->wall_img, "Invalid wall_img file or content\n");
 	map->player_img = mlx_xpm_file_to_image(map->mlx,
-			"/mnt/homes/yael-maa/so_long/img_xpm/player.xpm", &w, &h);
+			"/mnt/homes/yael-maa/so_long/img_xpm/player_up.xpm", &w, &h);
 	invalid_img_file(map, map->player_img,
 		"Invalid player_img file or content\n");
 	map->col_img = mlx_xpm_file_to_image(map->mlx,

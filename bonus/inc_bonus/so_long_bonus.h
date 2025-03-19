@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 04:46:56 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 05:27:37 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/19 05:13:00 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ typedef struct s_map
 	void	*mlx;
 	void	*win;
 	void	*player_img;
+	void	*player_left_img;
+	void	*player_down_img;
+	void	*player_right_img;
 	void	*floor_img;
 	void	*wall_img;
 	void	*exit_img;

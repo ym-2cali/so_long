@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 04:05:09 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 05:26:45 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/19 05:27:35 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ void	move_up(t_map *map)
 			}
 		}
 		else
+		{
+			map->arr[map->player_pos.y][map->player_pos.x] = '0'; 	
 			put_player_img_up(map);
+		}
 	}
 }
 

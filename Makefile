@@ -12,7 +12,7 @@ OBJ_BONUS = $(CFILES_BONUS:.c=.o)
 
 CC = cc
 
-CFLAGS = -g -Wall -Wextra -Werror #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -ggdb -fsanitize=address
 
 NAME = so_long
 
@@ -20,15 +20,15 @@ NAME_BONUS = so_long_bonus
 
 all:$(NAME)
 
-$(NAME):$(OBJ)
+$(NAME):$(OBJ) mandatory/inc/so_long.h mandatory/src/parse/get_next_line/get_next_line.h
 	$(CC) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit $(OBJ)  -o $(NAME) 
 
 bonus:$(NAME_BONUS)
 
-$(NAME_BONUS):$(OBJ_BONUS) bonus/inc_bonus/so_long_bonus.h
+$(NAME_BONUS):$(OBJ_BONUS) bonus/inc_bonus/so_long_bonus.h bonus/src_bonus/parse_bonus/get_next_line/get_next_line.h
 	$(CC) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit $(OBJ_BONUS) -o $(NAME_BONUS) 
 
-%.o: %.c mandatory/inc/so_long.h mandatory/src/parse/get_next_line/get_next_line.h
+%.o: %.c
 	$(CC) $(CFLAGS) -Imlx  -c $< -o $@
 
 clean:

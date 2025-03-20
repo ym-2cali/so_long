@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 02:22:54 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 05:28:28 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/20 02:06:54 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	validate_elements(t_list *list)
 {
 	if (count_elements(list, 'E') != 1
 		|| count_elements(list, 'P') != 1
-		|| count_elements(list, 'C') < 1)
+		|| count_elements(list, 'C') < 1 || count_elements(list, 'N') < 1)
 		return (0);
 	return (1);
 }

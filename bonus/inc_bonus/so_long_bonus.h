@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 04:46:56 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/19 05:13:00 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/20 02:17:40 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,16 @@ typedef struct s_map
 	void	*wall_img;
 	void	*exit_img;
 	void	*col_img;
+	void	*enemy_up_img;
+	void	*enemy_right_img;
+	void	*enemy_down_img;
+	void	*enemy_left_img;
 	int		height;
 	int		width;
 	int		col;
 	int		gain;
 	t_pos	player_pos;
+	t_pos	enemy_pos;
 }	t_map;
 
 int		ft_strlen(const char *s);

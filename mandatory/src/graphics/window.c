@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:09:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/19 03:00:16 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/20 01:46:08 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void	get_img(t_map *map)
 
 void	put_img(t_map *map, int i, int j)
 {
+	mlx_put_image_to_window(map->mlx, map->win,
+		map->floor_img, j * 100, i * 100);
 	if (map->arr[i][j] == '1')
 		mlx_put_image_to_window(map->mlx, map->win,
 			map->wall_img, j * 100, i * 100);

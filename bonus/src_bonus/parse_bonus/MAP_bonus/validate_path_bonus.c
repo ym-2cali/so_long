@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 03:44:41 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 05:28:31 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/20 02:09:02 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	validate_path(t_list *list)
 		while (map[i][++j])
 		{
 			if (map[i][j] == 'P' || map[i][j] == '0'
-				|| map[i][j] == 'C' || map[i][j] == 'E')
+				|| map[i][j] == 'C' || map[i][j] == 'E' || map[i][j] == 'N')
 				return (write(2, "No Valid Path:", 15), ft_freearr(map), 0);
 		}
 	}

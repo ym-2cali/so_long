@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:09:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/19 05:48:59 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/20 02:26:14 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,20 @@ void	get_img(t_map *map)
 	map->col_img = mlx_xpm_file_to_image(map->mlx,
 			"/mnt/homes/yael-maa/so_long/img_xpm/coin.xpm", &w, &h);
 	invalid_img_file(map, map->col_img, "Invalid col_img file or content\n");
+	map->enemy_down_img = mlx_xpm_file_to_image(map->mlx, "/mnt/homes/yael-maa/so_long/img_xpm/enemy_down.xpm", &w, &h);
+	invalid_img_file(map, map->enemy_down_img, "Invalid enemy_img file or content\n");
+	map->enemy_left_img = mlx_xpm_file_to_image(map->mlx, "/mnt/homes/yael-maa/so_long/img_xpm/enemy_left.xpm", &w, &h);
+	invalid_img_file(map, map->enemy_left_img, "Invalid enemy_img file or content\n");
+	map->enemy_right_img = mlx_xpm_file_to_image(map->mlx, "/mnt/homes/yael-maa/so_long/img_xpm/enemy_right.xpm", &w, &h);
+	invalid_img_file(map, map->enemy_right_img, "Invalid enemy_img file or content\n");
+	map->enemy_up_img = mlx_xpm_file_to_image(map->mlx, "/mnt/homes/yael-maa/so_long/img_xpm/enemy_up.xpm", &w, &h);
+	invalid_img_file(map, map->enemy_up_img, "Invalid enemy_img file or content\n");
 }
 
 void	put_img(t_map *map, int i, int j)
 {
+	mlx_put_image_to_window(map->mlx, map->win,
+		map->floor_img, j * 100, i * 100);
 	if (map->arr[i][j] == '1')
 		mlx_put_image_to_window(map->mlx, map->win,
 			map->wall_img, j * 100, i * 100);
@@ -76,6 +86,14 @@ void	put_img(t_map *map, int i, int j)
 	else if (map->arr[i][j] == 'E')
 		mlx_put_image_to_window(map->mlx, map->win,
 			map->exit_img, j * 100, i * 100);
+	else if (map->arr[i][j] == 'N')
+	{
+		map->enemy_pos.x = j;
+		map->enemy_pos.y = i;
+		mlx_put_image_to_window(map->mlx, map->win,
+			map->floor_img, j * 100, i * 100);
+		mlx_put_image_to_window(map->mlx, map->win, map->enemy_down_img, j * 100, i * 100);
+	}
 	else if (map->arr[i][j] == 'C')
 	{
 		map->col++;

@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 04:46:56 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/20 02:17:40 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/20 07:18:47 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include <sys/time.h>
 # include "../src_bonus/parse_bonus/get_next_line/get_next_line.h"
 # include "mlx.h"
 
@@ -62,6 +63,7 @@ typedef struct s_map
 	int		gain;
 	t_pos	player_pos;
 	t_pos	enemy_pos;
+	struct timeval last_move_time;
 }	t_map;
 
 int		ft_strlen(const char *s);
@@ -111,5 +113,15 @@ void	put_player_img_left(t_map *map);
 void	put_player_img_down(t_map *map);
 void	put_player_img_right(t_map *map);
 void	put_img(t_map *map, int i, int j);
+void	put_enemy_img_up(t_map *map);
+void	put_enemy_img_left(t_map *map);
+void	put_enemy_img_down(t_map *map);
+void	put_enemy_img_right(t_map *map);
+void    move_enemy_up(t_map *map);
+void    move_enemy_left(t_map *map);
+void    move_enemy_down(t_map *map);
+void    move_enemy_right(t_map *map);
+void	enemy_direction(t_map *map);
+int		enemy_move_algo(t_map *map);
 
 #endif

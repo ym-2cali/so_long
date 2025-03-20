@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 05:06:19 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 06:15:21 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/20 07:00:57 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,10 @@ int	main(int ac, char **av)
 		clear_list(&list);
 	get_img(&map);
 	draw_img(&map);
+	mlx_loop_hook(map.mlx, enemy_move_algo, &map);
 	mlx_hook(map.win, 2, 0, h_events, &map);
 	mlx_hook(map.win, 17, 0, close_window, &map);
-	mlx_loop(&map.mlx);
+	mlx_loop(map.mlx);
 	ft_freearr(map.arr);
 	return (0);
 }

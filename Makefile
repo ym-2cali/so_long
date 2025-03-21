@@ -13,7 +13,7 @@ OBJ_BONUS = $(CFILES_BONUS:.c=.o)
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -ggdb #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -ggdb -fsanitize=address
 
 NAME = so_long
 

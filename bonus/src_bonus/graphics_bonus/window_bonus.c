@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:09:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/22 05:57:01 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/22 09:34:13 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,6 @@ void	get_img(t_map *map)
 			"/mnt/homes/yael-maa/so_long/img_xpm/player_right.xpm", &w, &h);
 	invalid_img_file(map, map->player_right_img,
 		"Invalid player_right_img file or content\n");
-	map->col_img = mlx_xpm_file_to_image(map->mlx,
-			"/mnt/homes/yael-maa/so_long/img_xpm/coin_1.xpm", &w, &h);
-	invalid_img_file(map, map->col_img, "Invalid col_img file or content\n");
 	map->enemy_down_img = mlx_xpm_file_to_image(map->mlx, "/mnt/homes/yael-maa/so_long/img_xpm/enemy_down.xpm", &w, &h);
 	invalid_img_file(map, map->enemy_down_img, "Invalid enemy_img file or content\n");
 	map->enemy_left_img = mlx_xpm_file_to_image(map->mlx, "/mnt/homes/yael-maa/so_long/img_xpm/enemy_left.xpm", &w, &h);
@@ -62,6 +59,21 @@ void	get_img(t_map *map)
 	invalid_img_file(map, map->enemy_right_img, "Invalid enemy_img file or content\n");
 	map->enemy_up_img = mlx_xpm_file_to_image(map->mlx, "/mnt/homes/yael-maa/so_long/img_xpm/enemy_up.xpm", &w, &h);
 	invalid_img_file(map, map->enemy_up_img, "Invalid enemy_img file or content\n");
+	map->col_img[0] = (mlx_xpm_file_to_image(map->mlx,
+			"/mnt/homes/yael-maa/so_long/img_xpm/coin_1.xpm", &w, &h));
+	invalid_img_file(map, map->col_img[0], "Invalid col_img file or content\n");
+	map->col_img[1] = mlx_xpm_file_to_image(map->mlx,
+			"/mnt/homes/yael-maa/so_long/img_xpm/coin_2.xpm", &w, &h);
+	invalid_img_file(map, map->col_img[1], "Invalid col_img file or content\n");
+	map->col_img[2] = mlx_xpm_file_to_image(map->mlx,
+			"/mnt/homes/yael-maa/so_long/img_xpm/coin_3.xpm", &w, &h);
+	invalid_img_file(map, map->col_img[2], "Invalid col_img file or content\n");
+	map->col_img[3] = mlx_xpm_file_to_image(map->mlx,
+			"/mnt/homes/yael-maa/so_long/img_xpm/coin_4.xpm", &w, &h);
+	invalid_img_file(map, map->col_img[3], "Invalid col_img file or content\n");
+	map->col_img[4] = mlx_xpm_file_to_image(map->mlx,
+			"/mnt/homes/yael-maa/so_long/img_xpm/coin_5.xpm", &w, &h);
+	invalid_img_file(map, map->col_img[4], "Invalid col_img file or content\n");
 }
 
 void	put_img(t_map *map, int i, int j)
@@ -97,8 +109,15 @@ void	put_img(t_map *map, int i, int j)
 	else if (map->arr[i][j] == 'C')
 	{
 		map->col++;
-		mlx_put_image_to_window(map->mlx, map->win,
-			map->col_img, j * 100, i * 100);
+		//put_coin_frames(map);
+		int k=0;
+		while (k <=4)
+		{
+			mlx_put_image_to_window(map->mlx, map->win,
+			map->col_img[k++], j * 100, i * 100);
+			mlx_put_image_to_window(map->mlx, map->win,map->floor_img,j*100,i*100);
+		}
+		
 	}
 }
 

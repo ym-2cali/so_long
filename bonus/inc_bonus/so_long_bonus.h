@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 04:46:56 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/21 05:17:59 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/22 08:44:35 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct s_map
 	void	*floor_img;
 	void	*wall_img;
 	void	*exit_img;
-	void	*col_img;
+	void	*col_img[5];
 	void	*enemy_up_img;
 	void	*enemy_right_img;
 	void	*enemy_down_img;
@@ -64,8 +64,13 @@ typedef struct s_map
 	char	c_enemy;
 	t_pos	player_pos;
 	t_pos	enemy_pos;
+	t_pos	col_last_pos;
+	int		**cp;
 	struct timeval last_move_time;
+	struct timeval coin_move_time;
+	int coin_f;
 }	t_map;
+
 
 int		ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, int n);
@@ -125,5 +130,8 @@ void    move_enemy_right(t_map *map);
 void	enemy_direction(t_map *map);
 int		enemy_move_algo(t_map *map);
 void	enemy_direction_helper(t_map *map, int x, int y);
+int		move_coin(t_map *map);
+void	get_coin_position(t_map *map);
+void    put_coin_frames(t_map *map);
 
 #endif

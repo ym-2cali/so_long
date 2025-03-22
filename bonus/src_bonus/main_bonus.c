@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 05:06:19 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/22 05:07:04 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/22 10:04:45 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	**lst_to_arr(t_list *list)
 	return (arr);
 }
 
-void f(){system("leaks so_long_bonus");}
+void f(){system("leaks so_long_bonus");} 
 int	main(int ac, char **av)
 {
 	// atexit(f);
@@ -72,10 +72,14 @@ int	main(int ac, char **av)
 	ft_bzero(&map, sizeof(t_map));
 	parse(av[1], &list);
 	get_window(&map, &list);
+	get_coin_position(&map);
+	// printf("%d %d\n", map.col_last_pos.x, map.col_last_pos.y);
 	if (list.size)
 		clear_list(&list);
 	get_img(&map);
 	draw_img(&map);
+	// printf("here");
+	mlx_loop_hook(map.mlx, move_coin, &map);
 	mlx_loop_hook(map.mlx, enemy_move_algo, &map);
 	mlx_hook(map.win, 2, 0, h_events, &map);
 	mlx_hook(map.win, 17, 0, close_window, &map);

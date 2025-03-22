@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 03:08:54 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/22 01:39:39 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/22 10:05:08 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ void	enemy_direction_helper(t_map *map, int x, int y)
 		}
 	}
 }
+
 void	enemy_direction(t_map *map)
 {
 	int	x;
 	int	y;
 	struct timeval current_time;
 	struct timeval time_dif;
-	
 	x = map->enemy_pos.x - map->player_pos.x;
 	y = map->enemy_pos.y - map->player_pos.y;
 	// printf("%d %d", x, y);
@@ -75,6 +75,7 @@ void	enemy_direction(t_map *map)
 
 int	enemy_move_algo(t_map *map)
 {
+	move_coin(map);
 	enemy_direction(map);
 	return (0);
 }

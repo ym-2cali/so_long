@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 04:05:09 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/19 05:27:35 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/22 01:46:05 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 void	move_up(t_map *map)
 {
+	int i =-1;
+	while (map->arr[++i])
+				printf("%s\n", map->arr[i]);
+	printf("----------------\n");
 	if (map->arr[map->player_pos.y - 1][map->player_pos.x] != '1')
 	{
 		if (map->arr[map->player_pos.y - 1][map->player_pos.x] == 'C')
@@ -35,6 +39,7 @@ void	move_up(t_map *map)
 			map->arr[map->player_pos.y][map->player_pos.x] = '0'; 	
 			put_player_img_up(map);
 		}
+	
 	}
 }
 

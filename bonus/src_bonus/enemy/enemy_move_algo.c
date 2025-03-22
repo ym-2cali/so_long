@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 03:08:54 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/21 12:13:27 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/22 01:39:39 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	enemy_direction(t_map *map)
 	
 	x = map->enemy_pos.x - map->player_pos.x;
 	y = map->enemy_pos.y - map->player_pos.y;
-	printf("%d %d", x, y);
+	// printf("%d %d", x, y);
 	gettimeofday(&current_time, NULL);
 	time_dif.tv_sec = (current_time.tv_sec - map->last_move_time.tv_sec) * 1000000 + (current_time.tv_usec - map->last_move_time.tv_usec);
 	if (x == 0 && y == 0)

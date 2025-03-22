@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 05:06:19 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/20 07:00:57 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/22 01:54:27 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,18 @@ char	**lst_to_arr(t_list *list)
 
 	if (!list || !list->head)
 		return (NULL);
-	arr = malloc(sizeof(char *) * (list->size));
+	arr = malloc(sizeof(char *) * (list->size) + 1);
 	if (!arr)
 		return (NULL);
 	tmp = list->head;
 	lst_to_arr_helper(list, arr, tmp);
 	return (arr);
 }
+
+void f(){system("leaks so_long_bonus");}
 int	main(int ac, char **av)
 {
+	atexit(f);
 	t_map	map;
 	t_list	list;
 

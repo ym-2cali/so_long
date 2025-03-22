@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 05:06:19 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/22 01:54:27 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/22 05:07:04 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	**lst_to_arr(t_list *list)
 void f(){system("leaks so_long_bonus");}
 int	main(int ac, char **av)
 {
-	atexit(f);
+	// atexit(f);
 	t_map	map;
 	t_list	list;
 

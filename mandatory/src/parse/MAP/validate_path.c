@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 03:44:41 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 02:57:34 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/22 04:58:19 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,14 @@ int	validate_path(t_list *list)
 	flood_fill(map, size, player_pos);
 	i = -1;
 	while (map[++i])
+		printf("%s\n", map[i]);
+	i = -1;
+	while (map[++i])
 	{
 		j = -1;
 		while (map[i][++j])
 		{
-			if (map[i][j] == 'P' || map[i][j] == '0'
-				|| map[i][j] == 'C' || map[i][j] == 'E')
+			if (map[i][j] == 'P' || map[i][j] == 'C' || map[i][j] == 'E')
 				return (write(2, "No Valid Path:", 15), ft_freearr(map), 0);
 		}
 	}

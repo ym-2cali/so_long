@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:09:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/20 02:26:14 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/22 05:57:01 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	get_img(t_map *map)
 	invalid_img_file(map, map->player_right_img,
 		"Invalid player_right_img file or content\n");
 	map->col_img = mlx_xpm_file_to_image(map->mlx,
-			"/mnt/homes/yael-maa/so_long/img_xpm/coin.xpm", &w, &h);
+			"/mnt/homes/yael-maa/so_long/img_xpm/coin_1.xpm", &w, &h);
 	invalid_img_file(map, map->col_img, "Invalid col_img file or content\n");
 	map->enemy_down_img = mlx_xpm_file_to_image(map->mlx, "/mnt/homes/yael-maa/so_long/img_xpm/enemy_down.xpm", &w, &h);
 	invalid_img_file(map, map->enemy_down_img, "Invalid enemy_img file or content\n");

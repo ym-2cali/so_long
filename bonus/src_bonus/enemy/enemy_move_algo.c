@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 03:08:54 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/23 13:15:40 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 13:34:21 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	enemy_direction(t_map *map)
 	if (x == 0 && y == 0)
 	{
 		write(1, "you lost\n", 10);
-		exit(0);
+		close_window(map);
 	}
 	if (time_dif.tv_sec >= (1000000 / 2))
 	{

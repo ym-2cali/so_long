@@ -32,6 +32,7 @@ void	move_up(t_map *map)
 		}
 		else
 			put_player_img_up(map);
+		display_moves(map);
 	}
 }
 
@@ -56,6 +57,7 @@ void	move_left(t_map *map)
 		}
 		else
 			put_player_img_left(map);
+		display_moves(map);	
 	}
 }
 
@@ -80,6 +82,7 @@ void	move_down(t_map *map)
 		}
 		else
 			put_player_img_down(map);
+		display_moves(map);	
 	}
 }
 
@@ -104,5 +107,6 @@ void	move_right(t_map *map)
 		}
 		else
 			put_player_img_right(map);
+		display_moves(map);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 04:46:56 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/23 05:32:55 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 07:00:52 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct s_map
 	int		col;
 	int		gain;
 	t_pos	player_pos;
+	int		moves;
 }	t_map;
 
 int		ft_strlen(const char *s);
@@ -107,5 +108,8 @@ void	put_player_img_down(t_map *map);
 void	put_player_img_right(t_map *map);
 void	put_img(t_map *map, int i, int j);
 void	destroy_image(t_map *map);
+void	ft_putnbr_fd(int n, int fd);
+void	display_moves(t_map *map);
+void	ft_putchar_fd(char c, int fd);
 
 #endif

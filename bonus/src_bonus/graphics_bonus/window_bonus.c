@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:09:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/22 09:34:13 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 05:29:44 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	close_window(t_map *map)
 {
+	destroy_image(map);
 	if (map->win)
 		mlx_destroy_window(map->mlx, map->win);
 	ft_freearr(map->arr);

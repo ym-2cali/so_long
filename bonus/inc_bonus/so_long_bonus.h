@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 04:46:56 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/22 08:44:35 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 05:28:27 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,5 +133,6 @@ void	enemy_direction_helper(t_map *map, int x, int y);
 int		move_coin(t_map *map);
 void	get_coin_position(t_map *map);
 void    put_coin_frames(t_map *map);
+void	destroy_image(t_map *map);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:09:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/22 01:53:22 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 05:33:55 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	close_window(t_map *map)
 {
+	destroy_image(map);
 	if (map->win)
 		mlx_destroy_window(map->mlx, map->win);
 	ft_freearr(map->arr);
@@ -42,6 +43,20 @@ void	get_img(t_map *map)
 	map->col_img = mlx_xpm_file_to_image(map->mlx,
 			"/mnt/homes/yael-maa/so_long/img_xpm/coin.xpm", &w, &h);
 	invalid_img_file(map, map->col_img, "Invalid col_img file or content\n");
+	map->player_left_img = mlx_xpm_file_to_image(map->mlx,
+			"/mnt/homes/yael-maa/so_long/img_xpm/player_left.xpm", &w, &h);
+	invalid_img_file(map, map->player_left_img,
+		"Invalid player_left_img file or content\n");
+	invalid_img_file(map, map->player_img,
+		"Invalid player_img file or content\n");
+	map->player_down_img = mlx_xpm_file_to_image(map->mlx,
+			"/mnt/homes/yael-maa/so_long/img_xpm/player_down.xpm", &w, &h);
+	invalid_img_file(map, map->player_down_img,
+		"Invalid player_down_img file or content\n");
+	map->player_right_img = mlx_xpm_file_to_image(map->mlx,
+			"/mnt/homes/yael-maa/so_long/img_xpm/player_right.xpm", &w, &h);
+	invalid_img_file(map, map->player_right_img,
+		"Invalid player_right_img file or content\n");
 }
 
 void	put_img(t_map *map, int i, int j)

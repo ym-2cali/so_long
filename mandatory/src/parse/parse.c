@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 02:05:11 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 23:00:06 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 05:21:37 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	read_map(char *av, t_list *list)
 	if (fd < 0)
 	{
 		perror("Can't open file");
+		clear_list(list);
 		exit(0);
 	}
 	str = NULL;

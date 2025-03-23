@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 04:46:56 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/23 09:43:14 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 13:14:03 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,36 +42,34 @@ typedef struct s_pos
 
 typedef struct s_map
 {
-	char	**arr;
-	void	*mlx;
-	void	*win;
-	void	*player_img;
-	void	*player_left_img;
-	void	*player_down_img;
-	void	*player_right_img;
-	void	*floor_img;
-	void	*wall_img;
-	void	*exit_img;
-	void	*col_img[5];
-	void	*enemy_up_img;
-	void	*enemy_right_img;
-	void	*enemy_down_img;
-	void	*enemy_left_img;
-	int		height;
-	int		width;
-	int		col;
-	int		gain;
-	int		move;
-	char	c_enemy;
-	t_pos	player_pos;
-	t_pos	enemy_pos;
-	t_pos	col_last_pos;
-	int		**cp;
-	struct timeval last_move_time;
-	struct timeval coin_move_time;
-	int coin_f;
+	char			**arr;
+	void			*mlx;
+	void			*win;
+	void			*player_img;
+	void			*player_left_img;
+	void			*player_down_img;
+	void			*player_right_img;
+	void			*floor_img;
+	void			*wall_img;
+	void			*exit_img;
+	void			*col_img[5];
+	void			*enemy_up_img;
+	void			*enemy_right_img;
+	void			*enemy_down_img;
+	void			*enemy_left_img;
+	int				height;
+	int				width;
+	int				col;
+	int				gain;
+	int				move;
+	t_pos			player_pos;
+	t_pos			enemy_pos;
+	t_pos			col_last_pos;
+	int				**cp;
+	struct timeval	last_move_time;
+	struct timeval	coin_move_time;
+	int				coin_f;
 }	t_map;
-
 
 int		ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, int n);
@@ -124,19 +122,33 @@ void	put_enemy_img_up(t_map *map);
 void	put_enemy_img_left(t_map *map);
 void	put_enemy_img_down(t_map *map);
 void	put_enemy_img_right(t_map *map);
-void    move_enemy_up(t_map *map);
-void    move_enemy_left(t_map *map);
-void    move_enemy_down(t_map *map);
-void    move_enemy_right(t_map *map);
+void	move_enemy_up(t_map *map);
+void	move_enemy_left(t_map *map);
+void	move_enemy_down(t_map *map);
+void	move_enemy_right(t_map *map);
 void	enemy_direction(t_map *map);
 int		enemy_move_algo(t_map *map);
-void	enemy_direction_helper(t_map *map, int x, int y);
+void	enemy_direction_helper2(t_map *map, int x, int y);
+void	enemy_direction_helper1(t_map *map, int x, int y);
 int		move_coin(t_map *map);
 void	get_coin_position(t_map *map);
-void    put_coin_frames(t_map *map);
+void	put_coin_frames(t_map *map);
 void	destroy_image(t_map *map);
 int		ft_ilen(int n);
 char	*ft_itoa(int n);
 void	display_moves(t_map *map);
+void	read_error(t_list *list);
+void	get_col_img(t_map *map);
+void	get_enemy_img(t_map *map);
+void	get_player_image(t_map *map);
+void	put_img_helper(t_map *map, int i, int j);
+void	win_msg(t_map *map);
+void	coin_frame1(t_map *map, int i, int j);
+void	coin_frame2(t_map *map, int i, int j);
+void	coin_frame3(t_map *map, int i, int j);
+void	coin_frame4(t_map *map, int i, int j);
+void	coin_frame0(t_map *map, int i, int j);
+void	put_frames(t_map *map, int i, int j);
+void	destroy_img_helper(t_map *map);
 
 #endif

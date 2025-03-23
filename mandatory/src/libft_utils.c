@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 03:30:11 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/23 07:01:26 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 11:03:38 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,10 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(r % 10, fd);
 	}
 }
+
 void	display_moves(t_map *map)
 {
 	write(1, "move: ", 6);
-	ft_putnbr_fd(map->moves++, 1);
+	ft_putnbr_fd(++map->moves, 1);
 	write(1, "\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 03:44:41 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/23 07:00:10 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 11:16:42 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,6 @@ int	validate_path(t_list *list)
 	if (!map)
 		return (0);
 	flood_fill(map, size, player_pos);
-	// i = -1;
-	// while (map[++i])
-	// 	printf("%s\n", map[i]);
 	i = -1;
 	while (map[++i])
 	{

@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 03:30:11 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/23 10:27:54 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 13:01:14 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,9 @@ char	*ft_itoa(int n)
 void	display_moves(t_map *map)
 {
 	char	*nbr;
-	
+
 	nbr = ft_itoa(++map->move);
-	mlx_put_image_to_window(map->mlx, map->win, map->wall_img, 0 , 0);
+	mlx_put_image_to_window(map->mlx, map->win, map->wall_img, 0, 0);
 	mlx_string_put(map->mlx, map->win, 10, 10, 0x00FF0000, nbr);
 	free(nbr);
 }

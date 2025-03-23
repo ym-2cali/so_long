@@ -1,4 +1,4 @@
- /* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 04:05:09 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/18 02:56:52 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 11:08:02 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	move_left(t_map *map)
 		}
 		else
 			put_player_img_left(map);
-		display_moves(map);	
+		display_moves(map);
 	}
 }
 
@@ -82,7 +82,7 @@ void	move_down(t_map *map)
 		}
 		else
 			put_player_img_down(map);
-		display_moves(map);	
+		display_moves(map);
 	}
 }
 

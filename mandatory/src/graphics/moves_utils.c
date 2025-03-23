@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 01:20:37 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/23 05:19:08 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 11:08:18 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	put_player_img_up(t_map *map)
 {
 	mlx_put_image_to_window(map->mlx, map->win, map->floor_img,
 		map->player_pos.x * 100, map->player_pos.y * 100);
-	map->arr[map->player_pos.y][map->player_pos.x] = '0'; 
+	map->arr[map->player_pos.y][map->player_pos.x] = '0';
 	map->player_pos.y--;
 	map->arr[map->player_pos.y][map->player_pos.x] = 'P';
 	mlx_put_image_to_window(map->mlx, map->win, map->floor_img,

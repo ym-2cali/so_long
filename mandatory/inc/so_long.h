@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 04:46:56 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/23 07:00:52 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 11:15:42 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,7 @@ void	destroy_image(t_map *map);
 void	ft_putnbr_fd(int n, int fd);
 void	display_moves(t_map *map);
 void	ft_putchar_fd(char c, int fd);
+void	get_player_image(t_map *map);
+void	read_error(t_list *list);
 
 #endif

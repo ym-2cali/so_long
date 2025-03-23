@@ -5,7 +5,7 @@ parse/get_next_line/get_next_line.c graphics/window.c graphics/window_utils.c li
 CFILES_BONUS = $(addprefix bonus/src_bonus/, main_bonus.c parse_bonus/MAP_bonus/validate_extension_bonus.c parse_bonus/parse_libft_bonus.c parse_bonus/parse_bonus.c parse_bonus/MAP_bonus/validate_borders_bonus.c\
 parse_bonus/MAP_bonus/validate_map_elements_bonus.c parse_bonus/MAP_bonus/validate_map_bonus.c parse_bonus/MAP_bonus/map_errors_bonus.c parse_bonus/get_next_line/get_next_line_utils.c\
 parse_bonus/get_next_line/get_next_line.c graphics_bonus/window_bonus.c graphics_bonus/window_utils_bonus.c libft_utils_bonus.c graphics_bonus/moves_bonus.c graphics_bonus/moves_utils_bonus.c errors_bonus.c parse_bonus/MAP_bonus/validate_path_bonus.c\
-enemy/enemy_moves.c enemy/enemy_moves_utils.c enemy/enemy_move_algo.c graphics_bonus/coins_animation.c)
+enemy/enemy_moves.c enemy/enemy_moves_utils.c enemy/enemy_move_algo.c graphics_bonus/coins_animation.c graphics_bonus/coin_frames.c)
 
 OBJ = $(CFILES:.c=.o)
 

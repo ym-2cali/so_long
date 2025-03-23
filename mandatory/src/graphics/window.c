@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 01:09:53 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/23 05:33:55 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 11:12:45 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,44 +19,6 @@ int	close_window(t_map *map)
 		mlx_destroy_window(map->mlx, map->win);
 	ft_freearr(map->arr);
 	exit(0);
-}
-
-void	get_img(t_map *map)
-{
-	int	w;
-	int	h;
-
-	map->exit_img = mlx_xpm_file_to_image(map->mlx,
-			"/mnt/homes/yael-maa/so_long/img_xpm/exit.xpm", &w, &h);
-	invalid_img_file(map, map->exit_img, "Invalid exit_img file or content\n");
-	map->floor_img = mlx_xpm_file_to_image(map->mlx,
-			"/mnt/homes/yael-maa/so_long/img_xpm/floor.xpm", &w, &h);
-	invalid_img_file(map, map->floor_img,
-		"Invalid floor_img file or content\n");
-	map->wall_img = mlx_xpm_file_to_image(map->mlx,
-			"/mnt/homes/yael-maa/so_long/img_xpm/wall.xpm", &w, &h);
-	invalid_img_file(map, map->wall_img, "Invalid wall_img file or content\n");
-	map->player_img = mlx_xpm_file_to_image(map->mlx,
-			"/mnt/homes/yael-maa/so_long/img_xpm/player_up.xpm", &w, &h);
-	invalid_img_file(map, map->player_img,
-		"Invalid player_img file or content\n");
-	map->col_img = mlx_xpm_file_to_image(map->mlx,
-			"/mnt/homes/yael-maa/so_long/img_xpm/coin.xpm", &w, &h);
-	invalid_img_file(map, map->col_img, "Invalid col_img file or content\n");
-	map->player_left_img = mlx_xpm_file_to_image(map->mlx,
-			"/mnt/homes/yael-maa/so_long/img_xpm/player_left.xpm", &w, &h);
-	invalid_img_file(map, map->player_left_img,
-		"Invalid player_left_img file or content\n");
-	invalid_img_file(map, map->player_img,
-		"Invalid player_img file or content\n");
-	map->player_down_img = mlx_xpm_file_to_image(map->mlx,
-			"/mnt/homes/yael-maa/so_long/img_xpm/player_down.xpm", &w, &h);
-	invalid_img_file(map, map->player_down_img,
-		"Invalid player_down_img file or content\n");
-	map->player_right_img = mlx_xpm_file_to_image(map->mlx,
-			"/mnt/homes/yael-maa/so_long/img_xpm/player_right.xpm", &w, &h);
-	invalid_img_file(map, map->player_right_img,
-		"Invalid player_right_img file or content\n");
 }
 
 void	put_img(t_map *map, int i, int j)

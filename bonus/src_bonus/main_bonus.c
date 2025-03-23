@@ -6,11 +6,25 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 05:06:19 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/22 10:04:45 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 12:55:45 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc_bonus/so_long_bonus.h"
+
+void	draw_img(t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (map->arr[++i])
+	{
+		j = -1;
+		while (map->arr[i][++j])
+			put_img(map, i, j);
+	}
+}
 
 void	lst_to_arr_helper(t_list *list, char **arr, t_node *tmp)
 {
@@ -56,10 +70,8 @@ char	**lst_to_arr(t_list *list)
 	return (arr);
 }
 
-void f(){system("leaks so_long_bonus");} 
 int	main(int ac, char **av)
 {
-	// atexit(f);
 	t_map	map;
 	t_list	list;
 
@@ -73,12 +85,10 @@ int	main(int ac, char **av)
 	parse(av[1], &list);
 	get_window(&map, &list);
 	get_coin_position(&map);
-	// printf("%d %d\n", map.col_last_pos.x, map.col_last_pos.y);
 	if (list.size)
 		clear_list(&list);
 	get_img(&map);
 	draw_img(&map);
-	// printf("here");
 	mlx_loop_hook(map.mlx, move_coin, &map);
 	mlx_loop_hook(map.mlx, enemy_move_algo, &map);
 	mlx_hook(map.win, 2, 0, h_events, &map);

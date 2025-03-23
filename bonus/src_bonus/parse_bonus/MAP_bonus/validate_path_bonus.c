@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 03:44:41 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/22 01:39:58 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 11:36:11 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	fill(char **map, t_pos size, t_pos current)
 		map[current.y][current.x] = 'X';
 	if ((current.y < 0) || (current.x < 0)
 		|| (current.y > size.y) || (current.x > size.x)
-		|| map[current.y][current.x] == '1' || map[current.y][current.x] == 'X' || map[current.y][current.x] == 'N')
+		|| map[current.y][current.x] == '1' || map[current.y][current.x] == 'X'
+		|| map[current.y][current.x] == 'N')
 		return ;
 	map[current.y][current.x] = 'X';
 	fill(map, size, (t_pos){current.x - 1, current.y});
@@ -72,9 +73,6 @@ int	validate_path(t_list *list)
 	if (!map)
 		return (0);
 	flood_fill(map, size, player_pos);
-	// i = -1;
-	// while (map[++i])
-	// 	printf("%s\n", map[i]);;
 	i = -1;
 	while (map[++i])
 	{

@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 04:46:56 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/23 05:28:27 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/23 09:43:14 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct s_map
 	int		width;
 	int		col;
 	int		gain;
+	int		move;
 	char	c_enemy;
 	t_pos	player_pos;
 	t_pos	enemy_pos;
@@ -134,5 +135,8 @@ int		move_coin(t_map *map);
 void	get_coin_position(t_map *map);
 void    put_coin_frames(t_map *map);
 void	destroy_image(t_map *map);
+int		ft_ilen(int n);
+char	*ft_itoa(int n);
+void	display_moves(t_map *map);
 
 #endif

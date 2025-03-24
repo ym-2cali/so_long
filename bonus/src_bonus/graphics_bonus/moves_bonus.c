@@ -6,7 +6,7 @@
 /*   By: yael-maa <yael-maa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 04:05:09 by yael-maa          #+#    #+#             */
-/*   Updated: 2025/03/23 13:29:07 by yael-maa         ###   ########.fr       */
+/*   Updated: 2025/03/24 16:51:26 by yael-maa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	move_up(t_map *map)
 		{
 			if (map->col == map->gain)
 				win_msg(map);
+			else
+				return ;
 		}
 		else if (map->arr[map->player_pos.y - 1][map->player_pos.x] == 'N')
 		{
@@ -56,6 +58,8 @@ void	move_left(t_map *map)
 		{
 			if (map->col == map->gain)
 				win_msg(map);
+			else
+				return ;
 		}
 		else if (map->arr[map->player_pos.y][map->player_pos.x - 1] == 'N')
 		{
@@ -82,6 +86,8 @@ void	move_down(t_map *map)
 		{
 			if (map->col == map->gain)
 				win_msg(map);
+			else
+				return ;
 		}
 		else if (map->arr[map->player_pos.y + 1][map->player_pos.x] == 'N')
 		{
@@ -108,6 +114,8 @@ void	move_right(t_map *map)
 		{
 			if (map->col == map->gain)
 				win_msg(map);
+			else
+				return ;
 		}
 		else if (map->arr[map->player_pos.y][map->player_pos.x + 1] == 'N')
 		{
